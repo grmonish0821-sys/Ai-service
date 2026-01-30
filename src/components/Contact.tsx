@@ -1,6 +1,5 @@
 import { useState, FormEvent } from 'react';
 import { Mail, Send, CheckCircle, AlertCircle } from 'lucide-react';
-import { supabase } from '../lib/supabase';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -35,17 +34,10 @@ export default function Contact() {
     }
 
     try {
-      const { error } = await supabase.from('contact_submissions').insert([
-        {
-          name: formData.name,
-          email: formData.email,
-          company: formData.company,
-          message: formData.message,
-        },
-      ]);
-
-      if (error) throw error;
-
+      // Supabase removed: replace with your preferred backend or API endpoint.
+      // For now we simulate a successful submission and log the data.
+      await new Promise((res) => setTimeout(res, 500));
+      console.log('Contact form submission (local):', formData);
       setSubmitStatus('success');
       setFormData({ name: '', email: '', company: '', message: '' });
     } catch (error) {

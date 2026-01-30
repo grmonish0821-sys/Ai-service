@@ -1,6 +1,7 @@
-import { createClient } from '@supabase/supabase-js';
+// Supabase integration removed. Export a minimal stub to avoid runtime import errors.
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
-
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+export const supabase = {
+  from: () => ({
+    insert: async () => ({ data: null, error: null }),
+  }),
+};
