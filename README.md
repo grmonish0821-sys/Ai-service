@@ -84,3 +84,5 @@ npm run dev
 Deployment
 
 This project can be deployed on: Vercel
+
+https://ai-service-khaki.vercel.app/
